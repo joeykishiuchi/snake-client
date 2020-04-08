@@ -1,3 +1,4 @@
+const { keys } = require('./constants');
 let connection;
 
 const handleUserInput = function(stdin, connection) {
@@ -6,16 +7,8 @@ const handleUserInput = function(stdin, connection) {
       // allows user to exit stdin interface with 'ctrl+C'
       console.log('Good Bye');
       process.exit();
-    } else if (data === 'w') {
-      connection.write('Move: up');
-    } else if (data === 'a') {
-      connection.write('Move: left');
-    } else if (data === 's') {
-      connection.write('Move: down');
-    } else if (data === 'd') {
-      connection.write('Move: right');
-    } else if (data === 'h') {
-      connection.write('Say: Hey, wazzap!');
+    } else {
+      connection.write(keys[data])
     }
   });
 };
