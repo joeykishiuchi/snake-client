@@ -4,4 +4,4 @@ console.log('Connecting ...');
 // creates connection from client.js
 connect();
 // creates stdin interface from input.js
-setupInterface(); 
+setupInterface(connect());
